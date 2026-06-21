@@ -17,8 +17,7 @@ const __dirname = path.dirname(__filename);
 const app = express();
 
 app.use(cors({
-  origin: [process.env.FRONTED_URL],
-  methods: ["GET", "POST", "PUT", "DELETE"],
+  origin: true,
   credentials: true,
 }));
 
