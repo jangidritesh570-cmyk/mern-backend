@@ -10,20 +10,16 @@ import authRouter from "./router/userRoutes.js";
 import projectRouter from "./router/projectRoutes.js";
 
 config();
-console.log("FRONTEND_URL =", process.env.FRONTEND_URL);
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const app = express();
 
-app.use(
-  cors({
-    origin: "https://student-management-system-nine-sigma.vercel.app",
-    credentials: true,
-    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-  })
-);
+app.use(cors({
+  origin: true,
+  credentials: true,
+}));
 
 app.use(cookieParser());
 app.use(express.json());
